@@ -65,10 +65,12 @@ if per_diff > 1:
 #TODO 6. - Instead of printing ("Get News"), use the News API to get articles related to the COMPANY_NAME.
     search_parameters = {
         "apikey": NEWS_API_KEY ,
-        "q": COMPANY_NAME , 
+        # "q" : COMPANY_NAME , 
+        # uSE QInTitle instead of just to remove html tags from the body of the text
+        "qInTitle": COMPANY_NAME , 
 }
 
-    news_response = requests.get(url=NEWS_ENDPOINT, params=search_parameters)
+    news_response = requests.get(NEWS_ENDPOINT, params=search_parameters)
     articles = news_response.json()["articles"]
     print(articles)
 #TODO 7. - Use Python slice operator to create a list that contains the first 3 articles. Hint: https://stackoverflow.com/questions/509211/understanding-slice-notation
