@@ -67,7 +67,7 @@ if per_diff > 1:
         "apikey": NEWS_API_KEY ,
         # "q" : COMPANY_NAME , 
         # uSE QInTitle instead of just to remove html tags from the body of the text
-        "qInTitle": COMPANY_NAME , 
+        "searchIn": COMPANY_NAME , 
 }
 
     news_response = requests.get(NEWS_ENDPOINT, params=search_parameters)
